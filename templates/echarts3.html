@@ -1,0 +1,120 @@
+{% extends 'admin.html' %}
+{% block content %}
+    <h2>选择前台<strong>echart3</strong>需要显示的字段数据(请勿选择相同字段)</h2>
+    <div class="select">
+        <div>
+            <span>关键字段1</span>
+            <select class="form-control"  name="keyword1">
+                <option value="播放量">播放量</option>
+                <option value="关注数">关注数</option>
+                <option value="硬币数">硬币数</option>
+                <option value="弹幕数">弹幕数</option>
+                <option value="收藏数">收藏数</option>
+                <option value="点赞数">点赞数</option>
+                <option value="分享数">分享数</option>
+                <option value="评论数">评论数</option>
+            </select>
+        </div>
+        <div>
+            <span>关键字段2</span>
+            <select class="form-control"  name="keyword2">
+                <option value="收藏数">收藏数</option>
+                <option value="播放量">播放量</option>
+                <option value="关注数">关注数</option>
+                <option value="硬币数">硬币数</option>
+                <option value="弹幕数">弹幕数</option>
+                <option value="点赞数">点赞数</option>
+                <option value="分享数">分享数</option>
+                <option value="评论数">评论数</option>
+            </select>
+        </div>
+        <div>
+            <span>关键字段3</span>
+            <select class="form-control"  name="keyword3">
+                <option value="点赞数">点赞数</option>
+                <option value="播放量">播放量</option>
+                <option value="关注数">关注数</option>
+                <option value="硬币数">硬币数</option>
+                <option value="弹幕数">弹幕数</option>
+                <option value="收藏数">收藏数</option>
+                <option value="分享数">分享数</option>
+                <option value="评论数">评论数</option>
+            </select>
+        </div>
+        <div>
+            <span>关键字段4</span>
+            <select class="form-control"  name="keyword4">
+                <option value="弹幕数">弹幕数</option>
+                <option value="播放量">播放量</option>
+                <option value="关注数">关注数</option>
+                <option value="硬币数">硬币数</option>
+                <option value="收藏数">收藏数</option>
+                <option value="点赞数">点赞数</option>
+                <option value="分享数">分享数</option>
+                <option value="评论数">评论数</option>
+            </select>
+        </div>
+        <div>
+            <span>关键字段5</span>
+            <select class="form-control"  name="keyword5">
+                <option value="评论数">评论数</option>
+                <option value="播放量">播放量</option>
+                <option value="关注数">关注数</option>
+                <option value="硬币数">硬币数</option>
+                <option value="弹幕数">弹幕数</option>
+                <option value="收藏数">收藏数</option>
+                <option value="点赞数">点赞数</option>
+                <option value="分享数">分享数</option>
+            </select>
+        </div>
+        <div>
+            <span>关键字段6</span>
+            <select class="form-control" name="keyword6">
+                <option value="分享数">分享数</option>
+                <option value="播放量">播放量</option>
+                <option value="关注数">关注数</option>
+                <option value="硬币数">硬币数</option>
+                <option value="弹幕数">弹幕数</option>
+                <option value="收藏数">收藏数</option>
+                <option value="点赞数">点赞数</option>
+                <option value="评论数">评论数</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn btn-primary" onclick="reset_echart3()">刷新</button>
+    <script>
+        $(document).ready(function () {
+            $('.selectpicker').selectpicker({});
+
+            $('.selectpicker').val('Mustard');
+            $('.selectpicker').selectpicker('render');
+        });
+
+        function reset_echart3() {
+            var keyword1 = $('select[name="keyword1"]').val();
+            var keyword2 = $('select[name="keyword2"]').val();
+            var keyword3 = $('select[name="keyword3"]').val();
+            var keyword4 = $('select[name="keyword4"]').val();
+            var keyword5 = $('select[name="keyword5"]').val();
+            var keyword6 = $('select[name="keyword6"]').val();
+            params = {
+                'keyword1': keyword1,
+                'keyword2': keyword2,
+                'keyword3': keyword3,
+                'keyword4': keyword4,
+                'keyword5': keyword5,
+                'keyword6': keyword6
+            };
+            console.log(params);
+            $.post('/admin/echart3', params, function (res) {
+                if (res.msg) {
+                    alert('刷新前台数据成功')
+                } else {
+                    alert(res.data)
+                }
+            })
+
+        }
+    </script>
+
+{% endblock %}

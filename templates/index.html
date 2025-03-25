@@ -1,0 +1,153 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>大数据b站可视化系统数据分析</title>
+    <script type="text/javascript" src="../static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../static/js/echarts3.js"></script>
+    <script type="text/javascript" src="../static/js/echarts4.js"></script>
+    <script type="text/javascript" src="../static/js/echarts2.js"></script>
+    <script type="text/javascript" src="../static/js/echarts1.js"></script>
+    <script type="text/javascript" src="../static/js/echarts5.js"></script>
+    <script type="text/javascript" src="../static/js/echarts6.js"></script>
+
+    <link rel="stylesheet" href="../static/css/comon0.css">
+</head>
+<body>
+<div class="loading">
+    <div class="loadbox"><img src="static/images/loading.gif"> 页面加载中...</div>
+</div>
+<div class="head">
+    <h1>大数据b站可视化系统数据分析</h1>
+    <a href="{{ url_for('admin.login') }}">后台管理</a>
+
+    <div class="time" id="showTime">2022/11/18 3:35:54</div>
+    <script>
+        var t = null;
+        t = setTimeout(time, 1000);//開始运行
+        function time() {
+            clearTimeout(t);//清除定时器
+            dt = new Date();
+            var y = dt.getFullYear();
+            var mt = dt.getMonth() + 1;
+            var day = dt.getDate();
+            var h = dt.getHours();//获取时
+            var m = dt.getMinutes();//获取分
+            var s = dt.getSeconds();//获取秒
+            var t = null;
+            document.getElementById("showTime").innerHTML = y + "/" + Appendzero(mt) + "/" + Appendzero(day) + " " + Appendzero(h) + ":" + Appendzero(m) + ":" + Appendzero(s) + "";
+
+            function Appendzero(obj) {
+                if (obj < 10) return "0" + "" + obj;
+                else return obj;
+            }
+
+            t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+
+    </script>
+
+</div>
+<div class="mainbox">
+    <ul class="clearfix">
+        <li>
+
+            <div class="boxall" style="height: calc(58% - .15rem)">
+                <div class="alltitle">硬币数前九数据</div>
+                <div class=" boxnav " id="echarts1">
+                </div>
+            </div>
+
+            <div class="boxall" style="height: calc(42% - .15rem)">
+                <div class="alltitle">粉丝数最多的前九名up主数据</div>
+                <div class="boxnav" id="echarts2"></div>
+            </div>
+        </li>
+
+
+        <li>
+            <div class="boxall" style="height: calc(20% - .15rem)">
+                <ul class="row h100 clearfix">
+                    <li class="col-6">
+                        <div class="sqzs h100">
+                            <p>分析</p>
+                            <h1>每日推荐</h1>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="boxall" style="height: calc(38% - .15rem)">
+                <div class="alltitle">最早发布的前四视频数据</div>
+                <div class="boxnav" id="echarts3"></div>
+            </div>
+
+            <div class="boxall" style="height: calc(42% - .15rem)">
+                <div class="alltitle">播放量前九数据</div>
+                <div class="boxnav" id="echarts4"></div>
+            </div>
+        </li>
+
+        <li>
+            <div class="boxall" style="height: calc(33.333% - .15rem)">
+                <div class="alltitle">名称最短的前四视频数据</div>
+                <div class="boxnav" id="echarts5"></div>
+            </div>
+
+            <div class="boxall" style="height: calc(33.333% - .15rem)">
+                <div class="alltitle">播放量前四数据</div>
+
+                <div class="boxnav" id="table">
+                    <table border="0" cellspacing="0" id="tabledata">
+                        <tr>
+                            <th></th>
+                            <th>发布时间</th>
+                            <th>关注数</th>
+                            <th>播放量</th>
+
+
+                        </tr>
+                        <tr>
+                            <th>字段</th>
+                            <td>8098</td>
+                            <td>19.80%</td>
+                            <td>22</td>
+
+                        </tr>
+                        <tr>
+                            <th>字段</th>
+                            <td>7506</td>
+                            <td>6.70%</td>
+                            <td>22</td>
+
+                        </tr>
+                        <tr>
+                            <th>字段</th>
+                            <td>3261</td>
+                            <td>32.30%</td>
+                            <td>10</td>
+
+                        </tr>
+                        <tr>
+                            <th>字段</th>
+                            <td>1993</td>
+                            <td> 201%</td>
+                            <td>10</td>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="boxall" style="height: calc(33.333% - .15rem)">
+                <div class="alltitle">最火的前四个视频弹幕占比</div>
+                <div class="boxnav" id="echarts6" style="height:calc(100% - .3rem);"></div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="../static/js/echarts.min.js"></script>
+<script language="JavaScript" src="../static/js/js.js"></script>
+</body>
+</html>

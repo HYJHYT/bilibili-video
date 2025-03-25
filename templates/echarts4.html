@@ -1,0 +1,33 @@
+{% extends 'admin.html' %}
+{% block content %}
+    <h2>设置前台<strong>echart4</strong>数据，播放量范围</h2>
+    <div class="center2">
+            播放量<span id="dleft"></span><span> -- </span><span id="dright"></span>币<br/>
+            <input id="ex16b" type="text" class="form-control"/><br/>
+    </div>
+    <button class="btn btn-primary" onclick="reset_echart4()">刷新</button>
+    <script>
+    //滑动条数值
+    $("#ex16b").slider({min: 300000, max: 5500000, value: [300000, 5500000],step:10000,focus: true, tooltip: 'hide'});
+    $("#ex16b").on("slide", function (slideEvt) {
+        $("#dleft").text((slideEvt.value)[0]);
+        $("#dright").text((slideEvt.value)[1]);
+    });
+    
+    function reset_echart4() {
+        var min = $("#dleft").text();
+        var max = $("#dright").text();
+        console.log(min,max);
+        $.post('/admin/echart4',{"min":min,"max":max},function (res) {
+            if(res.msg){
+                alert('刷新前台数据成功')
+            }else{
+                alert(res.data)
+            }
+        })
+    }
+    
+
+
+</script>
+{% endblock %}

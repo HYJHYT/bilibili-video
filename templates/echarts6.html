@@ -1,0 +1,29 @@
+{% extends 'admin.html' %}
+{% block content %}
+    <h2>设置前台<strong>echart6</strong>数据，弹幕数范围</h2>
+    <div class="center2">
+            弹幕量<span id="eleft"></span><span> -- </span><span id="eright"></span>币<br/>
+            <input id="ex16b" type="text" class="form-control"/><br/>
+    </div>
+    <button class="btn btn-primary" onclick="reset_echart6()">刷新</button>
+    <script>
+    //滑动条数值
+    $("#ex16b").slider({min: 50, max: 220000, value: [50, 220000],step:1000,focus: true, tooltip: 'hide'});
+    $("#ex16b").on("slide", function (slideEvt) {
+        $("#eleft").text((slideEvt.value)[0]);
+        $("#eright").text((slideEvt.value)[1]);
+    });
+
+    function reset_echart6() {
+        var min = $("#eleft").text();
+        var max = $("#eright").text();
+        $.post('/admin/echart6',{"min":min,"max":max},function (res) {
+            if(res.msg){
+                alert('刷新前台数据成功')
+            }else{
+                alert(res.data)
+            }
+        })
+    }
+</script>
+{% endblock %}

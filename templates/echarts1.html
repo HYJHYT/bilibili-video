@@ -1,0 +1,30 @@
+{% extends 'admin.html' %}
+{% block content %}
+<h2>设置前台<strong>echart1</strong>数据，硬币数范围</h2>
+    <div class="center2">
+            硬币数<span id="aleft"></span><span> -- </span><span id="aright"></span>币<br/>
+            <input id="ex16b" type="text" class="form-control"/><br/>
+    </div>
+    <button class="btn btn-primary" onclick="reset_echart1()">刷新</button>
+    <script>
+    //滑动条数值
+    $("#ex16b").slider({min: 200, max: 1600000, value: [200, 1600000],step:100000,focus: true, tooltip: 'hide'});
+    $("#ex16b").on("slide", function (slideEvt) {
+        $("#aleft").text((slideEvt.value)[0]);
+        $("#aright").text((slideEvt.value)[1]);
+    });
+
+    function reset_echart1() {
+        var min = $("#aleft").text();
+        var max = $("#aright").text();
+        console.log(min,max);
+        $.post('/admin/echart1',{"min":min,"max":max},function (res) {
+            if(res.msg){
+                alert('刷新前台数据成功')
+            }else{
+                alert(res.data)
+            }
+        })
+    }
+    </script>
+{% endblock %}

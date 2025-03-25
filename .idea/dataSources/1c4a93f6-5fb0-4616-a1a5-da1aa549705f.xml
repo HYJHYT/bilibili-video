@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="bilibili.sqlite">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.16">
+    <root id="1">
+      <ServerVersion>3.31.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="BData"/>
+    <table id="7" parent="2" name="admin"/>
+    <table id="8" parent="2" name="echart1"/>
+    <table id="9" parent="2" name="echart2"/>
+    <table id="10" parent="2" name="echart3"/>
+    <table id="11" parent="2" name="echart4"/>
+    <table id="12" parent="2" name="echart5"/>
+    <table id="13" parent="2" name="echart6"/>
+    <table id="14" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="15" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <column id="16" parent="6" name="id">
+      <Position>1</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="17" parent="6" name="视频名字">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="18" parent="6" name="UP主">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="19" parent="6" name="视频链接">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="20" parent="6" name="发布时间">
+      <Position>5</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="21" parent="6" name="关注数">
+      <Position>6</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="22" parent="6" name="硬币数">
+      <Position>7</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="23" parent="6" name="播放量">
+      <Position>8</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="24" parent="6" name="弹幕数">
+      <Position>9</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="25" parent="6" name="收藏数">
+      <Position>10</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="26" parent="6" name="点赞数">
+      <Position>11</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="27" parent="6" name="评论数">
+      <Position>12</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="28" parent="6" name="分享数">
+      <Position>13</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="29" parent="7" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="7" name="user">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <column id="31" parent="7" name="password">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <key id="32" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>int AUTO_INCREMENT|0s</DataType>
+    </column>
+    <column id="34" parent="8" name="colemin">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <column id="35" parent="8" name="colemax">
+      <Position>3</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <index id="36" parent="8" name="sqlite_autoindex_echart1_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="8">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_echart1_1</UnderlyingIndexName>
+    </key>
+    <column id="38" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int AUTO_INCREMENT|0s</DataType>
+    </column>
+    <column id="39" parent="9" name="fansmin">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <column id="40" parent="9" name="fansmax">
+      <Position>3</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <index id="41" parent="9" name="sqlite_autoindex_echart2_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="42" parent="9">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_echart2_1</UnderlyingIndexName>
+    </key>
+    <column id="43" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="10" name="keyword1">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <column id="45" parent="10" name="keyword2">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <column id="46" parent="10" name="keyword3">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <column id="47" parent="10" name="keyword4">
+      <Position>5</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <column id="48" parent="10" name="keyword5">
+      <Position>6</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <column id="49" parent="10" name="keyword6">
+      <Position>7</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <key id="50" parent="10">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="11" name="watchmin">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="53" parent="11" name="watchmax">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <key id="54" parent="11">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="55" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="56" parent="12" name="keyword1">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <column id="57" parent="12" name="keyword2">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <key id="58" parent="12">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="59" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int AUTO_INCREMENT|0s</DataType>
+    </column>
+    <column id="60" parent="13" name="barragemin">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <column id="61" parent="13" name="barragemax">
+      <Position>3</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <index id="62" parent="13" name="sqlite_autoindex_echart6_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="63" parent="13">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_echart6_1</UnderlyingIndexName>
+    </key>
+    <column id="64" parent="14" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="65" parent="14" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="66" parent="14" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="67" parent="14" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="68" parent="14" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="69" parent="15" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="70" parent="15" name="seq">
+      <Position>2</Position>
+    </column>
+  </database-model>
+</dataSource>
