@@ -30,7 +30,7 @@ for i in cookie_str.split(';'):  # 整理cookie
 header = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                   'Chrome/100.0.4896.127 Safari/537.36'}
-
+# 1111
 
 def GetBilibiliData(dom=None, cookies=None, header=None):
     """
